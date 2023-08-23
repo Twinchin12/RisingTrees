@@ -15,39 +15,21 @@ $(call inherit-product, device/oneplus/instantnoodlep/device.mk)
 # Inherit some common Evolution X stuff.
 $(call inherit-product, vendor/lineage/config/common_full_phone.mk)
 
-# Device config
-TARGET_HAS_UDFPS := true
+# Gapps
+WITH_GMS := true
+
+# Rice Target
 TARGET_ENABLE_BLUR := true
-TARGET_EXCLUDES_AUDIOFX := true
-TARGET_FACE_UNLOCK_SUPPORTED := true
-EXTRA_UDFPS_ANIMATIONS := true
-TARGET_BOOT_ANIMATION_RES := 1080
-TARGET_SUPPORTS_QUICK_TAP := true
 
-# Root
-WITH_SU := true
-
-# GAPPS config
-# 0 - NO GAPPS (default)
-# 1 - CORE GAPPS
-# 2 - FULL GAPPS
-WITH_GAPPS := 2
-
-# Use Google Telephony pack (Dialer, Contacts, Messaging) on GAPPS builds
-# Default = true
+# Rice stuff
+RICE_OFFICIAL := true
+RISING_CHIPSET := SNAPDRAGON865
+RISING_MAINTAINER := ZIZZYBOI
+TARGET_BUILD_APERTURE_CAMERA := true
+TARGET_HAS_UDFPS := true
+TARGET_USE_PIXEL_FINGERPRINT := true
 TARGET_USE_GOOGLE_TELEPHONY := false
-
-# Include Pixel Framework on FULL GAPPS builds
-# Default = true
-TARGET_USE_PIXEL_FRAMEWORK := true
-
-# Debugging
-TARGET_INCLUDE_MATLOG := false
-TARGET_DEFAULT_ADB_ENABLED := true
-
-# Maintainer
-ALPHA_BUILD_TYPE := Unofficial
-ALPHA_MAINTAINER := zizzyboi
+TARGET_SUPPORTS_QUICK_TAP := true
 
 PRODUCT_NAME := lineage_instantnoodlep
 PRODUCT_DEVICE := instantnoodlep
@@ -61,8 +43,8 @@ PRODUCT_SYSTEM_DEVICE := OnePlus8Pro
 PRODUCT_GMS_CLIENTID_BASE := android-oneplus
 
 PRODUCT_BUILD_PROP_OVERRIDES += \
-    PRIVATE_BUILD_DESC="OnePlus8Pro-user 13 RKQ1.211119.001 Q.11402a4-c5f9-c5fa release-keys" \
+    PRIVATE_BUILD_DESC="OnePlus8Pro-user 13 RKQ1.211119.001 Q.f9c4de_1_5b9c release-keys" \
     TARGET_DEVICE=$(PRODUCT_SYSTEM_DEVICE) \
     TARGET_PRODUCT=$(PRODUCT_SYSTEM_NAME)
 
-iBUILD_FINGERPRINT := OnePlus/OnePlus8Pro/OnePlus8Pro:13/RKQ1.211119.001/Q.11402a4-c5f9-c5fa:user/release-keys
+BUILD_FINGERPRINT := OnePlus/OnePlus8Pro/OnePlus8Pro:13/RKQ1.211119.001/Q.f9c4de_1_5b9c:user/release-keys
