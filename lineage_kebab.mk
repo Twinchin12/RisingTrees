@@ -13,13 +13,25 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 $(call inherit-product, device/oneplus/kebab/device.mk)
 
 # Inherit some common Evolution X stuff.
-$(call inherit-product, vendor/evolution/config/common_full_phone.mk)
+$(call inherit-product, vendor/lineage/config/common_full_phone.mk)
 
-EXTRA_UDFPS_ANIMATIONS := true
-TARGET_BOOT_ANIMATION_RES := 1080
+# Gapps
+WITH_GMS := true
+
+# Rice Target
+TARGET_ENABLE_BLUR := true
+
+# Rice stuff
+RICE_OFFICIAL := true
+RISING_CHIPSET := SNAPDRAGON865
+RISING_MAINTAINER := ZIZZYBOI
+TARGET_BUILD_APERTURE_CAMERA := true
+TARGET_HAS_UDFPS := true
+TARGET_USE_PIXEL_FINGERPRINT := true
+TARGET_USE_GOOGLE_TELEPHONY := false
 TARGET_SUPPORTS_QUICK_TAP := true
 
-PRODUCT_NAME := evolution_kebab
+PRODUCT_NAME := lineage_kebab
 PRODUCT_DEVICE := kebab
 PRODUCT_MANUFACTURER := OnePlus
 PRODUCT_BRAND := OnePlus
